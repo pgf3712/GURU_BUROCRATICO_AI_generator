@@ -1,0 +1,1 @@
+# GURU_BUROCRATICO_AI_generator
