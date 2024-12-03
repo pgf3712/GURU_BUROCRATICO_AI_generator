@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta</title>
+    <link rel="stylesheet" href="/static/styles.css"> <!-- Enlace al archivo CSS -->
+</head>
+<body>
+    <div class="container">
+        <h1>Introduce tu consulta</h1>
+        <p id="accionSeleccionada"></p> <!-- Muestra la acción seleccionada -->
+
+        <!-- Formulario para la consulta -->
+        <label for="consultaInput">Escribe tu consulta:</label>
+        <input type="text" id="consultaInput" placeholder="Introduce tu consulta aquí">
+        <button onclick="enviarConsulta()">Enviar Consulta</button>
+
+        <div id="resultado"></div>
+    </div>
+
+    <script>
+        // Leer el parámetro 'endpoint' de la URL
+        const params = new URLSearchParams(window.location.search);
+        let endpoint = params.get('endpoint');
+
+        // Decodificar y mostrar el endpoint seleccionado
+        endpoint = decodeURIComponent(endpoint);
+        document.getElementById('accionSeleccionada').innerText = `Acción seleccionada: ${endpoint}`;
+
+        async function enviarConsulta() {
+            const consultaInput = document.getElementById('consultaInput').value;
+
+            if (!consultaInput) {
+                document.getElementById('resultado').innerHTML = '<p>Error: Introduce una consulta.</p>';
+                return;
+            }
+
+            try {
+                // Construir la URL de la solicitud
+                const url = `http://127.0.0.1:8000${endpoint}?prompt=${encodeURIComponent(consultaInput)}`;
+                console.log("URL solicitada:", url); // Debug: Verificar URL generada
+
+                // Realizar la solicitud al backend
+                const response = await fetch(url, {
+                    method: 'GET',
+                });
+
+                if (!response.ok) {
+                    const errorData = await response.json();
+                    throw new Error(errorData.detail || 'Error en la consulta');
+                }
+
+                // Mostrar la respuesta del backend
+                const result = await response.json();
+                document.getElementById('resultado').innerHTML = `
+                    <h3>Respuesta:</h3>
+                    <p>${result.respuesta}</p>
+                `;
+            } catch (error) {
+                console.error("Error:", error); // Debug: Mostrar el error en la consola
+                document.getElementById('resultado').innerHTML = `<p>Error: ${error.message}</p>`;
+            }
+        }
+    </script>
+</body>
+</html>

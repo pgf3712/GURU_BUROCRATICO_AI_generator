@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acciones disponibles</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Elige una acción</h1>
+
+        <div id="acciones">
+            <button onclick="redirigir('/tramites/laborales/derechos-laborales')">Derechos Laborales</button>
+            <button onclick="redirigir('/tramites/laborales/prestaciones-desempleo')">Prestaciones por Desempleo</button>
+            <button onclick="redirigir('/tramites/laborales/bajas-laborales')">Bajas Laborales</button>
+            <button onclick="redirigir('/tramites/consumo/reclamaciones-productos-servicios')">Reclamaciones Productos y Servicios</button>
+            <button onclick="redirigir('/tramites/consumo/derechos-consumidor')">Derechos del Consumidor</button>
+            <button onclick="redirigir('/tramites/fiscales/declaracion-renta')">Declaración de la Renta</button>
+            <button onclick="redirigir('/tramites/fiscales/impuestos-municipales')">Impuestos Municipales</button>
+            <button onclick="redirigir('/tramites/seguridad-social/afiliacion-cotizacion')">Afiliación a la Seguridad Social</button>
+            <button onclick="redirigir('/tramites/seguridad-social/solicitud-pensiones')">Solicitud de Pensiones</button>
+            <button onclick="redirigir('/tramites/extranjeria/permisos-residencia-trabajo')">Permisos de Residencia y Trabajo</button>
+            <button onclick="redirigir('/tramites/extranjeria/reagrupacion-familiar')">Reagrupación Familiar</button>
+            <button onclick="redirigir('/tramites/registro-civil/inscripcion-nacimiento-defuncion')">Inscripción Nacimiento o Defunción</button>
+            <button onclick="redirigir('/tramites/registro-civil/matrimonios-divorcios')">Matrimonios y Divorcios</button>
+            <button onclick="redirigir('/tramites/vivienda/ayudas-alquiler')">Ayudas al Alquiler</button>
+            <button onclick="redirigir('/tramites/vivienda/tramitacion-hipotecas')">Tramitación de Hipotecas</button>
+            <button onclick="redirigir('/tramites/trafico/renovacion-carnet-conducir')">Renovar Carnet de Conducir</button>
+            <button onclick="redirigir('/tramites/trafico/transferencia-vehiculos')">Transferencia de Vehículos</button>
+            <button onclick="redirigir('/tramites/sanitarios/tarjeta-sanitaria-europea')">Tarjeta Sanitaria Europea</button>
+            <button onclick="redirigir('/tramites/sanitarios/cambio-medico-cabecera')">Cambio de Médico de Cabecera</button>
+            <button onclick="redirigir('/tramites/educativos/becas-ayudas-estudio')">Becas y Ayudas de Estudio</button>
+            <button onclick="redirigir('/tramites/educativos/homologacion-titulos-extranjeros')">Homologación de Títulos Extranjeros</button>
+            <!-- Añade más botones según sea necesario -->
+        </div>
+    </div>
+    
+    <script>
+        function redirigir(endpoint) {
+            // Redirige a consulta.html con el endpoint como parámetro en la URL
+            window.location.href = `/consulta.html?endpoint=${encodeURIComponent(endpoint)}`;
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+
+

@@ -1,0 +1,99 @@
+/* General */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* Contenedor principal */
+.container {
+    width: 90%;
+    max-width: 800px;
+    margin: 20px auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Cabecera */
+h1 {
+    text-align: center;
+    color: #444;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+/* Botones */
+button {
+    display: block;
+    width: 100%;
+    max-width: 200px;
+    margin: 10px auto;
+    background: #919191;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background: #919191;
+}
+
+/* Inputs */
+input[type="text"], input[type="number"], select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    box-sizing: border-box;
+    background: #f1f1f1;
+}
+
+/* Botón Registrar */
+button[type="submit"] {
+    background-color: #919191;
+    border-color: #919191;
+}
+
+button[type="submit"]:hover {
+    background-color: #919191;
+}
+
+/* Sección de resultados */
+#resultado {
+    margin-top: 20px;
+    padding: 15px;
+    background: #e9ecef;
+    border-radius: 5px;
+    color: #333;
+}
+
+/* Centrar contenido */
+.center {
+    text-align: center;
+}
+
+/* Flex para botones */
+#acciones {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+#acciones button {
+    width: 150px;
+    padding: 10px;
+    font-size: 1rem;
+    text-align: center;
+}
